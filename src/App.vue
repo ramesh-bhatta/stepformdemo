@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <StepForm/>
+    <button @click="clickShowBtn()">Show Hello Worl</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import StepForm from './components/StepForm.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    StepForm
+  },
+  data:function(){
+    return {
+      showHelloComp:false
+    }
+  },
+  methods:{
+    clickShowBtn(){
+        this.showHelloComp = !this.showHelloComp;
+    }
   }
 }
 </script>
